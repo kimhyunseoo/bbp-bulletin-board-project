@@ -2,18 +2,39 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>update</title>
+    <title>게시글 수정</title>
+    <link rel="stylesheet" th:href="@{/css/update.css}">
 </head>
 <body>
-<form action="/board/update" method="post" name="updateForm">
-    <input type="hidden" name="id" th:value="${boardUpdate.id}">
-    writer: <input type="text" name="boardWriter" th:value="${boardUpdate.boardWriter}" readonly> <br>
-    pass: <input type="text" name="boardPass" id="boardPass"> <br>
-    title: <input type="text" name="boardTitle" th:value="${boardUpdate.boardTitle}"> <br>
-    contents: <textarea name="boardContents" cols="30" rows="10" th:text="${boardUpdate.boardContents}"></textarea> <br>
-    <input type="hidden" name="boardHits" th:value="${boardUpdate.boardHits}">
-    <input type="button" value="글수정" onclick="boardUpdate()">
-</form>
+<div class="container">
+    <h2>게시글 수정</h2>
+    <form action="/board/update" method="post" name="updateForm">
+        <input type="hidden" name="id" th:value="${boardUpdate.id}">
+        <table>
+            <tr>
+                <td><label for="boardWriter">작성자</label></td>
+                <td><input type="text" name="boardWriter" th:value="${boardUpdate.boardWriter}" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="boardPass">비밀번호</label></td>
+                <td><input type="password" name="boardPass" id="boardPass" required></td>
+            </tr>
+            <tr>
+                <td><label for="boardTitle">제목</label></td>
+                <td><input type="text" name="boardTitle" th:value="${boardUpdate.boardTitle}" required></td>
+            </tr>
+            <tr>
+                <td><label for="boardContents">내용</label></td>
+                <td><textarea name="boardContents" cols="30" rows="10" th:text="${boardUpdate.boardContents}" required></textarea></td>
+            </tr>
+        </table>
+        <input type="hidden" name="boardHits" th:value="${boardUpdate.boardHits}">
+        <div class="buttons">
+            <input type="button" value="글수정" onclick="boardUpdate()">
+        </div>
+    </form>
+</div>
+
 <script th:inline="javascript">
     const boardUpdate = () => {
         const pass = [[${boardUpdate.boardPass}]];
@@ -26,3 +47,4 @@
     }
 </script>
 </body>
+</html>

@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f8fc;
+    display: flex;
+    flex-direction: column; /* 수직 정렬 */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 60%; /* 화면의 60% */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column; /* 수직으로 배치 */
+    gap: 20px; /* 테이블과 버튼 사이의 간격 */
+}
+
+table {
+    width: 100%; /* 테이블 크기 조정 */
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* 테이블 가운데 정렬 */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px; /* 테이블 셀 안쪽 여백 축소 */
+    text-align: left;
+}
+
+table th {
+    background-color: #e3f2fd;
+    color: #333;
+}
+
+table td {
+    background-color: #fff;
+}
+
+textarea {
+    width: 95%;
+    height: 200px; /* 큰 내용 박스 */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    resize: none; /* 크기 조절 방지 */
+    font-size: 14px;
+    color: #333;
+}
+
+.buttons {
+    display: flex; /* 버튼을 수평으로 배치 */
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:nth-child(1) {
+    background-color: #90caf9; /* 파랑 */
+    color: white;
+}
+
+button:nth-child(2) {
+    background-color: #81c784; /* 초록 */
+    color: white;
+}
+
+button:nth-child(3) {
+    background-color: #ef9a9a; /* 빨강 */
+    color: white;
+}
